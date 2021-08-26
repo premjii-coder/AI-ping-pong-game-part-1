@@ -3,6 +3,7 @@
 right_wristX="";
 right_wristY="";
 score="";
+status="";
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -43,8 +44,12 @@ right_wristY=result[0].pose.rightWrist.y;
 
 }
 }
+function start(){
+status="start";
+document.getElementById('status').innerHTML="game is loading";
+}
 function draw(){
-
+if(status=="start"){
   if(score>0.2){
     fill('#ccca4b');
     stroke('#ccca4b');
@@ -88,6 +93,8 @@ image(video,0,0,700,600);
    //function move call which in very important
     move();
 }
+}  
+
 
 
 
